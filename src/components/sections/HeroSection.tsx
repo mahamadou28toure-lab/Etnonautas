@@ -13,9 +13,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => {
     <section
       id="inicio"
       aria-labelledby="hero-heading"
-      className="relative min-h-[88vh] lg:min-h-[92vh] w-full flex items-center justify-center overflow-hidden pt-24 pb-16"
+      className="relative min-h-[85vh] lg:min-h-[92vh] w-full flex items-center justify-center overflow-hidden pt-24 pb-16"
     >
-      {/* Background Hero Image */}
+      {/* Full-bleed Background Hero Image */}
       <ResilientImage
         src={IMAGES.heroCastle}
         alt="Castillo de Disneyland Paris iluminado al anochecer"
@@ -24,40 +24,36 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => {
         className="w-full h-full object-cover object-center"
       />
 
-      {/* Corporate Gradient Scrim inspired by Fondo corporativo horizontal.png */}
+      {/* Balanced Corporate Gradient Scrim for Photography Clarity & Text Legibility */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-[#8D3B82]/75 via-[#4E3579]/70 to-[#233975]/88"
+        className="absolute inset-0 bg-gradient-to-t from-[#233975]/85 via-[#4E3579]/55 to-[#8D3B82]/45"
         aria-hidden="true"
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-6 md:space-y-8"
         >
-          {/* Official PMP Symbol Badge */}
-          <div className="mx-auto w-16 h-20 rounded-2xl bg-white p-2 shadow-lg flex items-center justify-center">
-            <img
-              src="/marca-grafica-pmp-simbolo-01.svg"
-              alt="Símbolo Paris Magic Plan"
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-contain"
-            />
-          </div>
+          {/* Subtle corporate pink accent line */}
+          <div
+            className="mx-auto w-16 h-1 rounded-full bg-[#EC4689]"
+            aria-hidden="true"
+          />
 
           {/* H1 Title */}
           <h1
             id="hero-heading"
-            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-semibold text-white leading-[1.08] tracking-wide max-w-4xl mx-auto"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-semibold text-white leading-[1.08] tracking-wide max-w-4xl mx-auto drop-shadow-sm"
           >
             {HERO_CONTENT.title}
           </h1>
 
           {/* Subtitle */}
-          <p className="font-serif text-2xl sm:text-3xl md:text-[34px] italic text-[#FCE7F3] leading-[1.25] max-w-3xl mx-auto">
+          <p className="font-serif text-2xl sm:text-3xl md:text-[34px] italic text-[#FCE7F3] leading-[1.25] max-w-3xl mx-auto drop-shadow-xs">
             {HERO_CONTENT.subtitle}
           </p>
 

@@ -32,11 +32,11 @@ export const FullWidthImageBanner: React.FC<FullWidthImageBannerProps> = ({
       aria-label={quote}
       className={`relative w-full overflow-hidden ${
         isClosingSection
-          ? 'min-h-[580px] md:min-h-[680px]'
-          : 'min-h-[420px] md:min-h-[540px]'
+          ? 'min-h-[520px] sm:min-h-[580px] md:min-h-[680px]'
+          : 'min-h-[380px] sm:min-h-[440px] md:min-h-[540px]'
       } flex items-center justify-center`}
     >
-      {/* Background Photography */}
+      {/* Full-bleed Background Photography */}
       <ResilientImage
         src={imageSrc}
         alt={imageAlt}
@@ -44,9 +44,9 @@ export const FullWidthImageBanner: React.FC<FullWidthImageBannerProps> = ({
         className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out"
       />
 
-      {/* Corporate Gradient Scrim inspired by Fondo corporativo horizontal.png */}
+      {/* Balanced Corporate Scrim for Photography Clarity & Text Legibility */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-[#8D3B82]/80 via-[#4E3579]/75 to-[#233975]/88"
+        className="absolute inset-0 bg-gradient-to-t from-[#233975]/85 via-[#4E3579]/55 to-[#8D3B82]/45"
         aria-hidden="true"
       />
 
@@ -57,7 +57,7 @@ export const FullWidthImageBanner: React.FC<FullWidthImageBannerProps> = ({
       />
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 md:py-28 text-center">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-28 text-center">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,23 +65,18 @@ export const FullWidthImageBanner: React.FC<FullWidthImageBannerProps> = ({
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-6"
         >
-          {/* Official Brand Symbol Badge */}
-          <div className="mx-auto w-14 h-16 rounded-2xl bg-white/95 p-1.5 shadow-md flex items-center justify-center">
-            <img
-              src="/marca-grafica-pmp-simbolo-01.svg"
-              alt=""
-              aria-hidden="true"
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-contain"
-            />
-          </div>
+          {/* Decorative corporate pink line */}
+          <div
+            className="mx-auto w-14 h-1 rounded-full bg-[#EC4689]"
+            aria-hidden="true"
+          />
 
           {isClosingSection ? (
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-semibold text-white leading-[1.15] tracking-wide max-w-4xl mx-auto">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-semibold text-white leading-[1.15] tracking-wide max-w-4xl mx-auto drop-shadow-sm">
               {quote}
             </h2>
           ) : (
-            <blockquote className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-medium italic text-white leading-[1.22] tracking-wide max-w-4xl mx-auto">
+            <blockquote className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-medium italic text-white leading-[1.22] tracking-wide max-w-4xl mx-auto drop-shadow-sm">
               “{quote}”
             </blockquote>
           )}
@@ -94,7 +89,7 @@ export const FullWidthImageBanner: React.FC<FullWidthImageBannerProps> = ({
                 </p>
               )}
               {subHeadline2 && (
-                <p className="text-base sm:text-lg text-white/90 leading-relaxed">
+                <p className="text-base sm:text-lg text-white/95 leading-relaxed">
                   {subHeadline2}
                 </p>
               )}

@@ -18,8 +18,15 @@ export const ResilientImage: React.FC<ResilientImageProps> = ({
 }) => {
   const [hasError, setHasError] = useState(false);
 
+  const hasPositionClass = /\b(absolute|fixed|sticky|relative)\b/.test(
+    containerClassName
+  );
+  const positionClass = hasPositionClass ? '' : 'relative';
+
   return (
-    <div className={`relative overflow-hidden bg-[#233975] ${containerClassName}`}>
+    <div
+      className={`${positionClass} overflow-hidden bg-[#233975] ${containerClassName}`}
+    >
       {!hasError ? (
         <img
           src={src}
