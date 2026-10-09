@@ -114,7 +114,7 @@ blockquote,
 }
 
 .bg-pmp-corporate {
-  background-image: url("/fondo-corporativo-horizontal.svg"),
+  background-image: url("assets/images/fondo-corporativo-horizontal.svg"),
     linear-gradient(155deg, #8d3b82 0%, #6b357b 35%, #3e3576 70%, #233975 100%);
   background-size: cover;
   background-position: center;
